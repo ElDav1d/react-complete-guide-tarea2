@@ -7,15 +7,16 @@ import CharComponent from './CharComponent/CharComponent';
 
 class App extends Component {
   state = {
-    inputContent : 'Blah',
+    inputContent : '',
     inputLength : 0,
-    inputChars : ['B','l','a','h']
+    inputChars : []
   }
 
   inputContentChangedHandler = (event) => {
     this.setState({
       inputContent : event.target.value,
-      inputLength : this.state.inputContent.length
+      inputLength : this.state.inputContent.length,
+      inputChars:  this.state.inputContent.split('')
     })
   }
 
