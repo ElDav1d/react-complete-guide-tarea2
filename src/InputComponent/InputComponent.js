@@ -1,9 +1,9 @@
 import React from 'react';
 
-const inputComponent = () => {
+const inputComponent = (props) => {
     return (
         <div>
-            <input type="text" value="poop" />
+            <input type="text" value={props.content} />
         </div>
     );
 };

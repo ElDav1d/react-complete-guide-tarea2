@@ -5,6 +5,7 @@ import ValidationComponent from './ValidationComponent/ValidationComponent';
 
 class App extends Component {
   state = {
+    inputContent : '',
     inputLength : 7
   }
 
@@ -13,8 +14,10 @@ class App extends Component {
       <div className="App">
         <h1>Hello World!</h1>
         <h2>This is about lists and conditionals</h2>
-        <InputComponent />
-        <ValidationComponent length={this.state.inputLength}/>
+        <InputComponent
+          content={this.state.inputContent}/>
+        <ValidationComponent
+          length={this.state.inputLength} />
       </div>
     );
   }
