@@ -6,7 +6,14 @@ import ValidationComponent from './ValidationComponent/ValidationComponent';
 class App extends Component {
   state = {
     inputContent : '',
-    inputLength : 7
+    inputLength : 0
+  }
+
+  inputContentChangedHandler = (event) => {
+    this.setState({
+      inputContent : event.target.value,
+      inputLength : this.state.inputContent.length
+    })
   }
 
   render() {
@@ -15,7 +22,7 @@ class App extends Component {
         <h1>Hello World!</h1>
         <h2>This is about lists and conditionals</h2>
         <InputComponent
-          content={this.state.inputContent}/>
+          changed={this.inputContentChangedHandler}/>
         <ValidationComponent
           length={this.state.inputLength} />
       </div>
