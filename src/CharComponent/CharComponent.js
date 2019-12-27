@@ -1,12 +1,10 @@
 import React from 'react';
 
-import './CharComponent.css'
-
 const charComponent = (props) => {
     return (
-        <div className="rgdt2-CharComponent_Container">
+        <li className="rgdt2-CharComponent_ListItem">
             <p>{props.char}</p>
-        </div>
+        </li>
     )
 }
 

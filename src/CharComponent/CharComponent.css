@@ -1,4 +1,10 @@
-.rgdt2-CharComponent_Container {
+.rgdt2-CharComponent_List {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.rgdt2-CharComponent_ListItem {
     display: inline-block;
     padding: 1rem;
     text-align: center;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import './CharComponent/CharComponent.css';
 import InputComponent from './InputComponent/InputComponent';
 import ValidationComponent from './ValidationComponent/ValidationComponent';
 import CharComponent from './CharComponent/CharComponent';
@@ -26,7 +27,12 @@ class App extends Component {
           changed={this.inputContentChangedHandler}/>
         <ValidationComponent
           length={this.state.inputLength} />
-        <CharComponent char="X"/>
+        <ul className="rgdt2-CharComponent_List">
+          <CharComponent char="X"/>
+          <CharComponent char="X"/>
+          <CharComponent char="X"/>
+          <CharComponent char="X"/>
+        </ul>
       </div>
     );
   }
