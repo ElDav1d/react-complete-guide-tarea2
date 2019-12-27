@@ -51,7 +51,8 @@ class App extends Component {
         <h1>Hello World!</h1>
         <h2>This is about lists and conditionals</h2>
         <InputComponent
-          changed={this.inputContentChangedHandler}/>
+          changed={this.inputContentChangedHandler}
+          currentValue ={this.state.inputContent} />
         <ValidationComponent
           length={this.state.inputLength} />
         {charList}
