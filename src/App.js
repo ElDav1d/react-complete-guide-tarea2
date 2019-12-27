@@ -20,14 +20,23 @@ class App extends Component {
     })
   }
 
+  deleteCharHandler = (charIndex) => {
+    const chars = [...this.state.inputChars];
+    chars.splice(charIndex, 1);
+    this.setState({inputChars: chars})
+  }
+
   render() {
     let charList = null;
 
     if (this.state.inputLength > 0) {
       charList = (
         <ul className="rgdt2-CharComponent_List">
-          {this.state.inputChars.map((char) => {
-            return <CharComponent char={char} />
+          {this.state.inputChars.map((char, index) => {
+            return <CharComponent
+            click={this.deleteCharHandler.bind(this,index)}
+            char={char}
+            key={index} />
           })}           
         </ul>
       )
