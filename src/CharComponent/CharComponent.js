@@ -1,4 +1,7 @@
 import React from 'react';
+
+import './CharComponent.css'
+
 const charComponent = (props) => {
     return (
         <div className="rgdt2-CharComponent_Container">
@@ -6,4 +9,5 @@ const charComponent = (props) => {
         </div>
     )
 }
+
 export default charComponent;
