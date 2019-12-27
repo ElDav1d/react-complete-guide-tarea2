@@ -21,6 +21,18 @@ class App extends Component {
   }
 
   render() {
+    let charList = null;
+
+    if (this.state.inputLength > 0) {
+      charList = (
+        <ul className="rgdt2-CharComponent_List">
+          {this.state.inputChars.map((char) => {
+            return <CharComponent char={char} />
+          })}           
+        </ul>
+      )
+    }
+
     return (
       <div className="App">
         <h1>Hello World!</h1>
@@ -29,11 +41,7 @@ class App extends Component {
           changed={this.inputContentChangedHandler}/>
         <ValidationComponent
           length={this.state.inputLength} />
-        <ul className="rgdt2-CharComponent_List">
-          {this.state.inputChars.map((char) => {
-            return <CharComponent char={char} />
-          })}           
-        </ul>
+        {charList}
       </div>
     );
   }
