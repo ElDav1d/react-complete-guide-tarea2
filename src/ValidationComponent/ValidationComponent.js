@@ -1,9 +1,9 @@
 import React from 'react';
 
-const validationComponent = () => {
+const validationComponent = (props) => {
     return (
         <div>
-            <p>this should be overwritten with input's length or something</p>
+            <p>The input's length is {props.length}</p>
         </div>
     );
 }
