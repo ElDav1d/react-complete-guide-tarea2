@@ -7,7 +7,7 @@ const validationComponent = (props) => {
     
     if (props.length >= 5) {
         textConfirmation = (
-            <p>Tex long ennough</p>
+            <p>Text long ennough</p>
         );
     }
     
