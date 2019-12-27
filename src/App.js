@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import './Char/Char.css';
-import InputComponent from './InputComponent/InputComponent';
 import Validation from './Validation/Validation';
 import Char from './Char/Char';
 
@@ -50,9 +49,10 @@ class App extends Component {
       <div className="App">
         <h1>Hello World!</h1>
         <h2>This is about lists and conditionals</h2>
-        <InputComponent
-          changed={this.inputContentChangedHandler}
-          currentValue ={this.state.inputContent} />
+        <input
+          type="text"
+          onChange={this.inputContentChangedHandler}
+          value={this.state.inputContent} />
         <Validation
           length={this.state.inputLength} />
         {charList}
