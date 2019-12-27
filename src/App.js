@@ -34,7 +34,7 @@ class App extends Component {
         <ul className="rgdt2-CharComponent_List">
           {this.state.inputChars.map((char, index) => {
             return <CharComponent
-            click={this.deleteCharHandler.bind(this,index)}
+            click={this.deleteCharHandler.bind(this, index)}
             char={char}
             key={index} />
           })}           
