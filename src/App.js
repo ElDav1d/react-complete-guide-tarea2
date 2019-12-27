@@ -7,8 +7,9 @@ import CharComponent from './CharComponent/CharComponent';
 
 class App extends Component {
   state = {
-    inputContent : '',
-    inputLength : 0
+    inputContent : 'Blah',
+    inputLength : 0,
+    inputChars : ['B','l','a','h']
   }
 
   inputContentChangedHandler = (event) => {
@@ -28,10 +29,9 @@ class App extends Component {
         <ValidationComponent
           length={this.state.inputLength} />
         <ul className="rgdt2-CharComponent_List">
-          <CharComponent char="X"/>
-          <CharComponent char="X"/>
-          <CharComponent char="X"/>
-          <CharComponent char="X"/>
+          {this.state.inputChars.map((char) => {
+            return <CharComponent char={char} />
+          })}           
         </ul>
       </div>
     );
