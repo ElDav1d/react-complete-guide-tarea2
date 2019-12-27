@@ -5,7 +5,7 @@ import ValidationComponent from './ValidationComponent/ValidationComponent';
 
 class App extends Component {
   state = {
-    inputLength : 0
+    inputLength : 7
   }
 
   render() {
