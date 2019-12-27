@@ -1,6 +1,6 @@
 import React from 'react';
 
-const validationComponent = (props) => {
+const validation = (props) => {
     let textConfirmation = (
         <p>Text too short</p>
     );
@@ -19,4 +19,4 @@ const validationComponent = (props) => {
     );
 }
 
-export default validationComponent;
+export default validation;

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import './CharComponent/CharComponent.css';
+import './Char/Char.css';
 import InputComponent from './InputComponent/InputComponent';
-import ValidationComponent from './ValidationComponent/ValidationComponent';
-import CharComponent from './CharComponent/CharComponent';
+import Validation from './Validation/Validation';
+import Char from './Char/Char';
 
 class App extends Component {
   state = {
@@ -35,9 +35,9 @@ class App extends Component {
 
     if (this.state.inputLength > 0) {
       charList = (
-        <ul className="rgdt2-CharComponent_List">
+        <ul className="rgdt2-Char_List">
           {this.state.inputChars.map((char, index) => {
-            return <CharComponent
+            return <Char
             click={this.deleteCharHandler.bind(this, index)}
             char={char}
             key={index} />
@@ -53,7 +53,7 @@ class App extends Component {
         <InputComponent
           changed={this.inputContentChangedHandler}
           currentValue ={this.state.inputContent} />
-        <ValidationComponent
+        <Validation
           length={this.state.inputLength} />
         {charList}
       </div>
