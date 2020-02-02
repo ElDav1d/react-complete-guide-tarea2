@@ -6,39 +6,34 @@ import Char from './Char/Char';
 
 class App extends Component {
   state = {
-    inputContent : '',
-    inputLength : 0,
-    inputChars : []
+    inputContent : ''
   }
 
   inputContentChangedHandler = (event) => {
     this.setState({
       inputContent : event.target.value,
-      inputLength : this.state.inputContent.length,
-      inputChars:  this.state.inputContent.split('')
     })
   }
 
   deleteCharHandler = (charIndex) => {
-    const chars = [...this.state.inputChars];
-    chars.splice(charIndex, 1);
+    const characters = this.state.inputContent.split('');
+    characters.splice(charIndex, 1);
+    const updatedinputContent = characters.join('')
     this.setState({
-      inputChars: chars,
-      inputContent : this.state.inputChars.join(''),
-      inputLength : this.state.inputContent.length
+      inputContent : updatedinputContent
     });
   }
 
   render() {
     let charList = null;
 
-    if (this.state.inputLength > 0) {
+    if (this.state.inputContent.length > 0) {
       charList = (
         <ul className="rgdt2-Char_List">
-          {this.state.inputChars.map((char, index) => {
+          {this.state.inputContent.split('').map((inputContentItem, index) => {
             return <Char
             click={this.deleteCharHandler.bind(this, index)}
-            char={char}
+            character={inputContentItem}
             key={index} />
           })}           
         </ul>
@@ -54,7 +49,7 @@ class App extends Component {
           onChange={this.inputContentChangedHandler}
           value={this.state.inputContent} />
         <Validation
-          length={this.state.inputLength} />
+          inputLength={this.state.inputContent.length} />
         {charList}
       </div>
     );
